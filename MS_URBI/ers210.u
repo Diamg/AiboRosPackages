@@ -1,0 +1,23 @@
+#################################################################
+### Default ERS210 config file                                ###
+#################################################################
+
+speaker.val->blend = queue;
+
+// Robot-specific aliases
+
+group head {headRoll,headPan,headTilt,mouth},
+group tail {tailPan,tailTilt},
+group ears {earR,earL},
+
+group ledT {ledTB,ledTO},
+group ledE {ledELL,ledEML,ledEUL,ledELR,ledEMR,ledEUR},
+
+
+// URBI animation
+
+anim+bg: { 
+  anim:ledEML.val = 1 &
+  anim:ledEMR.val = 1 &
+  anim:ledTB.val = 0.5 sin:4s ampli:0.6
+};

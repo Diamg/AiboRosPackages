@@ -1,0 +1,18 @@
+<package>
+  <description brief="aibo_server">
+
+     aibo_server
+
+  </description>
+  <author>Ricardo Tellez</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/aibo_server</url>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="sensor_msgs"/>
+
+</package>
+
+

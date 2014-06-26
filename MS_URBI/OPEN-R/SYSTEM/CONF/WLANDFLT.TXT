@@ -1,0 +1,19 @@
+
+HOSTNAME=AIBO
+ETHER_IP=192.168.0.124
+ETHER_NETMASK=255.255.255.0
+IP_GATEWAY=192.168.0.1
+ESSID=WIFIBASE
+WEPENABLE=0
+WEPKEY=AIBO2
+
+# APMODE=0 - "ad-hoc demo mode" (peer-to-peer)
+#       =1 - "infrastructure mode" (access point)
+#       =2 - "auto-detect" (defaults to infrastructure if both are found)
+APMODE=2
+
+# Channel of wireless network - is only needed with APMODE=0
+CHANNEL=3
+
+USE_DHCP=0
+

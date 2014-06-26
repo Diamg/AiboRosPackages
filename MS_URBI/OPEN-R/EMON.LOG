@@ -1,0 +1,112 @@
+mCOOP exception
+[exception info]
+   time stamp: 0x00000026f2f050f7
+   status:$12: 0x2000ff13, cause:$13: 0x0000000c
+ badvaddr: $8: 0x236ffff0,   epc:$14: 0x251bcad8
+[object info]
+ context: 0x8025a0e0, state: 0x00000001
+ last context: 0x00000000,last thread: 0x00000000
+[initial value info]
+ sr:$12: 0x0000ff13
+[register dump]
+ at: r1: 0x25255db4, v0: r2: 0x261f7be8, v1: r3: 0x24e04638, a0: r4: 0x261f7be8
+ a1: r5: 0x0000000c, a2: r6: 0x23700050, a3: r7: 0x00000050, t0: r8: 0x01800004
+ t1: r9: 0x00000003, t2:r10: 0x25257b14, t3:r11: 0x252576e0, t4:r12: 0x25257704
+ t5:r13: 0xfffffffc, t6:r14: 0xfffffffe, t7:r15: 0x25257700, s0:r16: 0x261f7c48
+ s1:r17: 0x23700048, s2:r18: 0x233c1270, s3:r19: 0x2370feb8, s4:r20: 0x233c127c
+ s5:r21: 0x8028b000, s6:r22: 0xbe3f298c, s7:r23: 0x00000000, t8:r24: 0x83f80000
+ t9:r25: 0x251bcac8, gp:r28: 0x25258c20, sp:r29: 0x236fffe0, s8:r30: 0x00000000
+ ra:r31: 0x2516e3bc, hi:   : 0x00000028, lo:   : 0x000001c5
+
+exception code:  3 TLB exception (store)
+
+[system control co-processor registers]
+   Index 0x00000006   Random 0x00000024 EntryLo0 0x0003a09e EntryLo1 0x00000000
+ Context 0x0011b7f0 PageMask 0x00000000    Wired 0x00000002      ??? ----------
+BadVAddr 0x236ffff0    Count 0x150187fd  EntryHi 0x00000000  Compare 0xf3118997
+  Status 0x2000ff00    Cause 0x1000802c      EPC 0x800c525c     PRId 0x00002751
+  Config 0x404664bb   LLAddr 0x001a8c75      ??? ----------      ??? ----------
+XContext 0x0011b7f0      ??? ----------      ??? ----------      ??? ----------
+     ??? ----------      ??? ----------      ECC 0x00000000 CacheErr 0xf4400000
+   TagLo 0x00000000    TagHi 0x00000000 ErrorEPC 0xbfc00e14      ??? ----------
+[floating-point general registers]
+ $f00: 0x99999999 $f01: 0x400b9999 $f02: 0x00000003 $f03: 0x00000000
+ $f04: 0x00000000 $f05: 0x40590000 $f06: 0x00000000 $f07: 0x00000000
+ $f08: 0x2633fff8 $f09: 0x430c6bf5 $f10: 0xf2822800 $f11: 0x3fe8d3cc
+ $f12: 0xe04d922c $f13: 0x3fe8d3cc $f14: 0x00000000 $f15: 0x3c7f62f3
+ $f16: 0xd0cd0618 $f17: 0xbf39ead3 $f18: 0x56fae57b $f19: 0x3f721280
+ $f20: 0x00000282 $f21: 0x00020405 $f22: 0x00180000 $f23: 0x8c406000
+ $f24: 0x00304821 $f25: 0x8c020a02 $f26: 0x00804820 $f27: 0x88002000
+ $f28: 0x00244000 $f29: 0x40800004 $f30: 0x01004908 $f31: 0x08020004
+[floating-point control registers]
+  $0:fp_eir: 0x00002750
+ $31:fp_csr: 0x01000000 (bit[17-0]: ----------------RN)
+[object list]
+Name                   ContextID  ThreadID   ExecSpcID  OID        MetaSpace
+-------------------------------------------------------------------------------
+systemCore             0x80246c20 0x80246dc0 0x80246d80 ---------- mCore
+systemCore(1)          0x80247a20 0x80247b80 0x80246d80 ---------- mCore
+mCOOPReflector         0x8024b200 0x8024ca00 0x8024c200 0x8000000b mCore
+uniMailer              0x8024b360 0x8024ca60 0x8024c240 0x8000000c mCore
+mCOOPFaultHandler      0x8024b4c0 0x8024cac0 0x8024c280 0x8000000d mCore
+mDriveFaultHandler     0x8024b620 0x8024cb20 0x8024c2c0 0x8000000e mCore
+registryManager        0x8024b780 0x8024cb80 0x8024c300 0x8000000f mCore
+addressManager         0x8024b8e0 0x8024cbe0 0x8024c340 0x80000010 mCore
+kernelModeLib          0x8024ba40 0x8024cc40 0x8024c380 0x80000011 mCore
+mCoreReflector         0x8024bba0 0x8024cca0 0x8024c3c0 0x80000012 mCore
+idle                   0x8024bd00 0x8024cd00 0x8024c400 0x80000013 mCore
+exceptionHandler       0x8024be60 0x8024cd60 0x8024c440 0x80000014 mCore
+analyzer               0x8024bfc0 0x8024cdc0 0x8024c480 0x80000015 mCore
+mDriveReflector        0x80250fc0 0x8024ce20 0x8024c4c0 0x80000016 mCore
+obletManager           0x80250e60 0x8024ce80 0x8024c500 0x80000017 mCore
+installer              0x80250d00 0x8024cee0 0x8024c540 0x80000018 mCore
+driverManager          0x80250ba0 0x8024cf40 0x8024c580 0x80000019 mCore
+objectManager          0x80250a40 0x8024cfa0 0x8024c5c0 0x8000001a mCore
+mClassReflector        0x802508e0 0x8024d000 0x8024c600 0x8000001b mCore
+memoryRegionManager    0x80250780 0x8024d060 0x8024c640 0x8000001c mCore
+sharedMemoryManager    0x80250620 0x8024d0c0 0x8024c680 0x8000001d mCore
+mSystemReflector       0x802504c0 0x8024d120 0x8024c6c0 0x8000001e mCore
+mAVFaultHandler        0x80250360 0x8024d180 0x8024c700 0x8000001f mCore
+mAVReflector           0x80250200 0x80251980 0x8024c740 0x80000020 mCore
+mAVInit                0x802547c0 0x80251920 0x8024c780 0x80000021 mCore
+avManager              0x80254660 0x802518c0 0x8024c7c0 0x80000022 mCore
+eventManager           0x80254500 0x80251860 0x8024c800 0x80000023 mCore
+downloader             0x80253f80 0x802516e0 0x8024c900 0x8000002a mSystem
+nonBlockingFileSystemManager 0x80253e20 0x80251680 0x8024c940 0x8000002b mDrive
+openrBusManager        0x80253cc0 0x80251620 0x8024c980 0x8000002c mDrive
+openrBusManager(1)     0x80258a00 0x80258500 0x8024c980 0x8000002c mDrive
+bmnDriver              0x80253b60 0x802515c0 0x8024c9c0 0x8000002d mDrive
+bmnDriver(1)           0x80255620 0x80251260 0x8024c9c0 0x8000002d mDrive
+fbkDriver              0x80253a00 0x80251560 0x802551c0 0x8000002e mDrive
+fbkDriver(1)           0x8025a7c0 0x802584a0 0x802551c0 0x8000002e mDrive
+fbkDriver(2)           0x8025a660 0x80258440 0x802551c0 0x8000002e mDrive
+cardManager            0x80255fc0 0x80251500 0x80255180 0x8000002f mDrive
+cardManager(1)         0x80258b60 0x80258560 0x80255180 0x8000002f mDrive
+memoryStickDriver      0x80255e60 0x802514a0 0x80255140 0x80000030 mDrive
+memoryStickDriver(1)   0x80255780 0x802512c0 0x80255140 0x80000030 mDrive
+fatFileSystem          0x80255d00 0x80251440 0x80255100 0x80000031 mCOOP
+memoryStickWatcher     0x80255ba0 0x802513e0 0x802550c0 0x80000032 mDrive
+oobjectManager         0x80255a40 0x80251380 0x80255080 0x80000033 mCOOP
+aperiosClass           0x802558e0 0x80251320 0x80255040 0x80000034 mClass
+opowerManager          0x802543a0 0x80251800 0x8024c840 0x80000035 mCOOP
+oserviceManager        0x80254240 0x802517a0 0x8024c880 0x80000036 mCOOP
+ovirtualRobot          0x802540e0 0x80251740 0x8024c8c0 0x80000037 mCOOP
+odesignedRobot         0x802554c0 0x80251200 0x80255000 0x80000038 mCOOP
+osystemLogger          0x80255360 0x80258980 0x80254fc0 0x80000039 mCOOP
+ovirtualRobotComm      0x80255200 0x80258920 0x80254f80 0x8000003a mCOOP
+ovirtualRobotAudioComm 0x802597c0 0x802588c0 0x80254f40 0x8000003b mCOOP
+IPStack                0x80259500 0x80258800 0x80254f00 0x8000003c mDrive
+OrinocoEnabler         0x802593a0 0x802587a0 0x80254ec0 0x8000003d mDrive
+hookConsoleIO          0x80259240 0x80258740 0x80254e80 0x8000003e mDrive
+emergencyMonitor       0x802590e0 0x802586e0 0x80254e40 0x8000003f mCOOP
+netconf                0x80258f80 0x80258680 0x80254e00 0x80000040 mCOOP
+anttcpio               0x80258e20 0x80258620 0x80254dc0 0x80000041 mDrive
+hookConsoleIOActivator 0x80258cc0 0x802585c0 0x80254d80 0x80000042 mCOOP
+OrinocoDriver          0x80259660 0x80258860 0x80254d40 0x80000043 mDrive
+OrinocoDriver(1)       0x8025a500 0x802583e0 0x80254d40 0x80000043 mDrive
+powerMonitor           0x8025a3a0 0x80258380 0x80254d00 0x80000044 mCOOP
+tinyFTPD               0x8025a240 0x80258320 0x80254cc0 0x80000045 mCOOP
+URBI                   0x8025a0e0 0x802582c0 0x80254c80 0x80000046 mCOOP
+[stack info]
+ area: 0x23708008 - 0x23710008, sp: 0x236fffe0
+sp might be broken. sp: 0x236fffe0

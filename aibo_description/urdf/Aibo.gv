@@ -1,0 +1,68 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"LB_up_leg_rot_y" [label="LB_up_leg_rot_y"];
+"LB_up_leg_rot_x" [label="LB_up_leg_rot_x"];
+"LB_down_leg" [label="LB_down_leg"];
+"LB_paw" [label="LB_paw"];
+"LF_up_leg_rot_y" [label="LF_up_leg_rot_y"];
+"LF_up_leg_rot_x" [label="LF_up_leg_rot_x"];
+"LF_down_leg" [label="LF_down_leg"];
+"LF_paw" [label="LF_paw"];
+"RB_up_leg_rot_y" [label="RB_up_leg_rot_y"];
+"RB_up_leg_rot_x" [label="RB_up_leg_rot_x"];
+"RB_down_leg" [label="RB_down_leg"];
+"RB_paw" [label="RB_paw"];
+"RF_up_leg_rot_y" [label="RF_up_leg_rot_y"];
+"RF_up_leg_rot_x" [label="RF_up_leg_rot_x"];
+"RF_down_leg" [label="RF_down_leg"];
+"RF_paw" [label="RF_paw"];
+"cuello" [label="cuello"];
+"pan" [label="pan"];
+"head" [label="head"];
+"tail1" [label="tail1"];
+"tail2" [label="tail2"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "legLB1" [label="xyz: -0.05 -0.068 0.162 \nrpy: 0 -0 0"]
+"legLB1" -> "LB_up_leg_rot_y"
+"LB_up_leg_rot_y" -> "legLB2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"legLB2" -> "LB_up_leg_rot_x"
+"LB_up_leg_rot_x" -> "legLB3" [label="xyz: -0.022 0 -0.079 \nrpy: 0.51 -0 0"]
+"legLB3" -> "LB_down_leg"
+"LB_down_leg" -> "LB_paw_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"LB_paw_joint" -> "LB_paw"
+"base_link" -> "legLF1" [label="xyz: -0.05 0.061 0.162 \nrpy: 0 -0 0"]
+"legLF1" -> "LF_up_leg_rot_y"
+"LF_up_leg_rot_y" -> "legLF2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"legLF2" -> "LF_up_leg_rot_x"
+"LF_up_leg_rot_x" -> "legLF3" [label="xyz: -0.022 0 -0.077 \nrpy: -0.51 0 0"]
+"legLF3" -> "LF_down_leg"
+"LF_down_leg" -> "LF_paw_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"LF_paw_joint" -> "LF_paw"
+"base_link" -> "legRB1" [label="xyz: 0.05 -0.068 0.162 \nrpy: 0 -0 0"]
+"legRB1" -> "RB_up_leg_rot_y"
+"RB_up_leg_rot_y" -> "legRB2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"legRB2" -> "RB_up_leg_rot_x"
+"RB_up_leg_rot_x" -> "legRB3" [label="xyz: 0.022 0 -0.079 \nrpy: 0.51 -0 0"]
+"legRB3" -> "RB_down_leg"
+"RB_down_leg" -> "RB_paw_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"RB_paw_joint" -> "RB_paw"
+"base_link" -> "legRF1" [label="xyz: 0.05 0.061 0.162 \nrpy: 0 -0 0"]
+"legRF1" -> "RF_up_leg_rot_y"
+"RF_up_leg_rot_y" -> "legRF2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"legRF2" -> "RF_up_leg_rot_x"
+"RF_up_leg_rot_x" -> "legRF3" [label="xyz: 0.022 0 -0.077 \nrpy: -0.51 0 0"]
+"legRF3" -> "RF_down_leg"
+"RF_down_leg" -> "RF_paw_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"RF_paw_joint" -> "RF_paw"
+"base_link" -> "neck" [label="xyz: 0 0.065 0.164 \nrpy: 0 -0 0"]
+"neck" -> "cuello"
+"cuello" -> "headPan" [label="xyz: 0 0 0.09 \nrpy: 0 -0 0"]
+"headPan" -> "pan"
+"pan" -> "headTilt" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"headTilt" -> "head"
+"base_link" -> "tailTilt" [label="xyz: 0 -0.11 0.185 \nrpy: 1.5707 -0 0"]
+"tailTilt" -> "tail1"
+"tail1" -> "tailPan" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"tailPan" -> "tail2"
+}

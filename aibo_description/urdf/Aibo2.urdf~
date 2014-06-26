@@ -1,0 +1,619 @@
+<?xml version="1.0"?>
+<robot name="Aibo">
+
+  <gazebo reference="">
+    <static>False</static>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+
+  <link name="base_link" >
+      <inertial>
+	<mass value="1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+      <collision name="geom">
+        <geometry>
+         <cylinder radius="0.055" length="0.240"/>
+        </geometry>
+	<origin xyz="0.0 0 0" rpy="0 1.5707 1.5707"/>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder radius="0.055" length="0.240"/>
+        </geometry>
+	<material name="black">
+          <color rgba="0.1 0.1 0.1 1"/>
+        </material>
+	<origin xyz="0.0 0 0" rpy="0 1.5707 1.5707"/>
+      </visual>
+    </link>
+
+
+<!-- S'ha de pensar que l'origen de l'articulacio es en referencia al pare d'aquesta, despres si es vol que l'articulacio no estigui en el centre del link s'ha de moure el visual -->
+
+<!-- Part superior, primer l'esfera per l'articulacio per fer el gir en l'eix y, despres el cilindre que rotara al voltant de l'eix x -->
+
+<!--Eix y-->
+
+  <link name="RF_up_leg_rot_y" >
+      <collision name="geom">
+        <geometry>
+          <sphere radius="0.005"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <sphere radius="0.005"/>
+        </geometry>
+	<material name="green">
+          <color rgba="0 0.8 0 1"/>
+        </material>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+  <link name="LF_up_leg_rot_y" >
+      <collision name="geom">
+        <geometry>
+          <sphere radius="0.005"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <sphere radius="0.005"/>
+        </geometry>
+	<material name="red">
+          <color rgba="0.8 0 0 1"/>
+        </material>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+  <link name="RB_up_leg_rot_y" >
+      <collision name="geom">
+        <geometry>
+          <sphere radius="0.005"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <sphere radius="0.005"/>
+        </geometry>
+	<material name="yellow">
+          <color rgba="1 1 0 1"/>
+        </material>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+  <link name="LB_up_leg_rot_y" >
+      <collision name="geom">
+        <geometry>
+          <sphere radius="0.005"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <sphere radius="0.005"/>
+        </geometry>
+	<material name="purple">
+          <color rgba="0.5 0 1 1"/>
+	</material>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+<!--Eix x-->
+
+  <link name="RF_up_leg_rot_x" >
+      <collision name="geom">
+			<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+			<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+	<material name="green"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="LF_up_leg_rot_x" >
+      <collision name="geom">
+			<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+			<origin xyz="0 0 -0.0275" rpy="0 0 0"/>	
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+	<material name="red"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="RB_up_leg_rot_x" >
+      <collision name="geom">
+			<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+			<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+	<material name="yellow"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="LB_up_leg_rot_x" >
+      <collision name="geom">
+			<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+      </collision> 
+      <visual name="visual">
+			<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.075"/>
+        </geometry>
+	<material name="purple"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+
+<!--Part inferior de la pota, amb rotacio al voltant de l'eix x-->
+
+  <link name="RF_down_leg" >
+      <collision name="geom">
+	<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+	<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+	<material name="green"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="LF_down_leg" >
+      <collision name="geom">
+	<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+	<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+	<material name="red"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="RB_down_leg" >
+      <collision name="geom">
+	<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+	<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+	<material name="yellow"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="LB_down_leg" >
+      <collision name="geom">
+	<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+	<origin xyz="0 0 -0.0275" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.020" length="0.080"/>
+        </geometry>
+	<material name="purple"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+<!--Potes-->
+
+  <link name="RF_paw" >
+      <collision name="geom">
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+	<material name="blue">
+          <color rgba="0 0 0.8 1"/>
+        </material>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="LF_paw" >
+      <collision name="geom">
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+	<surface>
+	  <friction>
+            <ode mu='1.000000' mu2='1.000000'/>
+          </friction>
+	</surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+	<material name="blue"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="RB_paw" >
+      <collision name="geom">
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+	<surface>
+	  <friction>
+            <ode mu='1.000000' mu2='1.000000'/>
+          </friction>
+	</surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+	<material name="blue"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+  <link name="LB_paw" >
+      <collision name="geom">
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+	<surface>
+	  <friction>
+            <ode mu='1.000000' mu2='1.000000'/>
+          </friction>
+	</surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <sphere radius="0.015"/>
+        </geometry>
+	<material name="blue"/>
+      </visual>
+      <inertial>
+	<mass value="0.1"/>
+        <inertia ixx='1' ixy='0' ixz='0' iyy='1' iyz='0' izz='1'/>
+      </inertial>
+    </link>
+
+
+<!--Joints-->
+
+<!-- Articulacio l'espatlla en revolucio de [-9,91] graus al voltant de eix y -->
+
+<!-- Articulacio l'espatlla en revolucio de [-134,120] les dretes i [-120,134] les esquerres graus al voltant de eix x -->
+
+<!-- Articulacio del genoll en revolucio de [-29,119] graus al voltant de eix x -->
+<!-- Aquestes dades han estat extretes de la pagina de Gostai Urbi  -->
+
+<!-- Pota esquerra frontal (ordenat per superior eix x, sup. eix y, inferior) -->
+
+    <joint type="revolute" name="LF_up_leg_rot_x_joint">
+      <origin xyz="-0.055 0.065 0" rpy="0 0 0"/>
+      <limit effort="1000.0" lower="-2.094" upper="2.3387" velocity="0.5"/> 
+      <axis xyz="1 0 0"/>
+      <parent link="base_link"/>
+      <child link="LF_up_leg_rot_y"/>
+      <dynamics damping="10000.0" friction="10000.0"/>
+      <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+    </joint>
+
+    <joint type="revolute" name="LF_up_leg_rot_y_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <limit effort="1000.0" lower="-0.15708" upper="1.58825" velocity="0.5"/> 
+      <axis xyz="0 1 0"/>
+      <parent link="LF_up_leg_rot_y"/>
+      <child link="LF_up_leg_rot_x"/>
+      <dynamics damping="10000.0" friction="10000.0"/>
+      <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+    </joint>
+
+    <joint type="revolute" name="LF_down_leg_joint">
+      <limit effort="1000.0" lower="-0.506" upper="2.0768" velocity="0.5"/>
+      <axis xyz="1 0 0"/>
+      <origin xyz="0 0.009 -0.065" rpy="0.38025 0 0"/>
+      <parent link="LF_up_leg_rot_x"/>
+      <child link="LF_down_leg"/>
+      <dynamics damping="10000.0" friction="10000.0"/>
+      <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+    </joint>
+
+<!-- Pota esquerra posterior (ordenat per superior eix x, sup. eix y, inferior) -->
+
+    <joint type="revolute" name="LB_up_leg_rot_x_joint">
+      <origin xyz="-0.055 -0.065 0" rpy="0 0 0"/>
+      <limit effort="1000.0" lower="-0.15708" upper="1.58825" velocity="0.5"/> 
+      <axis xyz="1 0 0"/>
+      <parent link="base_link"/>
+      <child link="LB_up_leg_rot_y"/>
+      <dynamics damping="10000.0" friction="10000.0"/>
+      <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+    </joint> 
+   <joint type="revolute" name="LB_up_leg_rot_y_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <limit effort="1000.0" lower="-2.094" upper="2.3387" velocity="0.5"/>
+      <axis xyz="0 1 0"/>
+      <parent link="LB_up_leg_rot_y"/>
+      <child link="LB_up_leg_rot_x"/>
+      <dynamics damping="10000.0" friction="10000.0"/>
+      <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+    </joint>
+
+   
+
+    <joint type="revolute" name="LB_down_leg_joint">
+      <limit effort="1000.0" lower="-0.506" upper="2.0768" velocity="0.5"/>
+      <axis xyz="1 0 0"/>
+      <origin xyz="0 -0.009 -0.065" rpy="-0.38025 0 0"/>
+      <parent link="LB_up_leg_rot_x"/>
+      <child link="LB_down_leg"/>
+      <dynamics damping="10000.0" friction="10000.0"/>
+      <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+    </joint>
+
+
+<!-- Pota dreta frontal (ordenat per espatlla eix x, espatlla eix y, inferior) -->
+
+    <joint type="revolute" name="RF_up_leg_rot_x_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <limit effort="1000.0" lower="-2.3387" upper="2.094" velocity="0.5"/> 
+      <axis xyz="1 0 0"/>
+      <parent link="RF_up_leg_rot_y"/>
+      <child link="RF_up_leg_rot_x"/>
+      <dynamics damping="10000.0" friction="10000.0"/>
+      <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+    </joint>
+
+    <joint type="revolute" name="RF_up_leg_rot_y_joint">
+      <origin xyz="0.055 0.065 0" rpy="0 0 0"/>
+      <limit effort="1000.0" lower="-1.58825" upper="0.15708" velocity="0.5"/> 
+      <axis xyz="0 1 0"/>
+      <parent link="base_link"/>
+      <child link="RF_up_leg_rot_y"/>
+      <dynamics damping="10000.0" friction="10000.0"/>
+      <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+    </joint>
+
+    <joint type="revolute" name="RF_down_leg_joint">
+      <limit effort="1000.0" lower="-0.506" upper="2.0768" velocity="0.5"/>
+      <axis xyz="1 0 0"/>
+      <origin xyz="0 0.009 -0.065" rpy="0.38025 0 0"/>
+      <parent link="RF_up_leg_rot_x"/>
+      <child link="RF_down_leg"/>
+      <dynamics damping="10000.0" friction="10000.0"/>
+      <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+    </joint>
+
+
+<!-- Pota dreta posterior (ordenat per superior eix x, sup. eix y, inferior) -->
+
+    <joint type="revolute" name="RB_up_leg_rot_x_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <limit effort="1000.0" lower="-2.3387" upper="2.094" velocity="0.5"/>
+      <axis xyz="1 0 0"/>
+      <parent link="RB_up_leg_rot_y"/>
+      <child link="RB_up_leg_rot_x"/>
+      <dynamics damping="10000.0" friction="10000.0"/>
+      <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+    </joint>
+
+    <joint type="revolute" name="RB_up_leg_rot_y_joint">
+      <origin xyz="0.055 -0.065 0" rpy="0 0 0"/>
+      <limit effort="1000.0" lower="-1.58825" upper="0.15708" velocity="0.5"/> 
+      <axis xyz="0 1 0"/>
+      <parent link="base_link"/>
+      <child link="RB_up_leg_rot_y"/>
+      <dynamics damping="10000.0" friction="10000.0"/>
+      <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+    </joint>
+
+    <joint type="revolute" name="RB_down_leg_joint">
+      <limit effort="1000.0" lower="-0.506" upper="2.0768" velocity="0.5"/>
+      <axis xyz="1 0 0"/>
+      <origin xyz="0 -0.009 -0.065" rpy="-0.38025 0 0"/>
+      <parent link="RB_up_leg_rot_x"/>
+      <child link="RB_down_leg"/>
+      <dynamics damping="10000.0" friction="10000.0"/>
+      <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+    </joint>
+
+
+
+
+
+<!-- Els peus son fixes -->
+    <joint type="fixed" name="RF_paw_joint">
+      <origin xyz="0 0 -0.070" rpy="0 0 0"/>
+      <parent link="RF_down_leg"/>
+      <child link="RF_paw"/>
+    </joint>
+
+    <joint type="fixed" name="LF_paw_joint">
+      <origin xyz="0 0 -0.070" rpy="0 0 0"/>
+      <parent link="LF_down_leg"/>
+      <child link="LF_paw"/>
+    </joint>
+
+    <joint type="fixed" name="RB_paw_joint">
+      <origin xyz="0 0 -0.070" rpy="0 0 0"/>
+      <parent link="RB_down_leg"/>
+      <child link="RB_paw"/>
+    </joint>
+
+    <joint type="fixed" name="LB_paw_joint">
+      <origin xyz="0 0 -0.070" rpy="0 0 0"/>
+      <parent link="LB_down_leg"/>
+      <child link="LB_paw"/>
+    </joint>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="RF_up_leg_rot_y">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="RF_up_leg_rot_x">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="RF_down_leg">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="LF_up_leg_rot_y">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="LF_up_leg_rot_x">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="LF_down_leg">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="RB_up_leg_rot_y">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  <gazebo reference="RB_up_leg_rot_x">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  <gazebo reference="RB_down_leg">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  <gazebo reference="LB_up_leg_rot_y">
+    <material>Gazebo/Purple</material>
+  </gazebo>
+  <gazebo reference="LB_up_leg_rot_x">
+    <material>Gazebo/Purple</material>
+  </gazebo>
+  <gazebo reference="LB_down_leg">
+    <material>Gazebo/Purple</material>
+  </gazebo>
+  <gazebo reference="RF_paw">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="LF_paw">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="RB_paw">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="LB_paw">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+</robot>

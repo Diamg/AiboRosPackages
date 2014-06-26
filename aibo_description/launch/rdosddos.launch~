@@ -1,0 +1,6 @@
+<launch>
+        <param name="robot_description" command="cat $(find r2d2)/model.urdf" />
+        
+        <node name="state_publisher" pkg="r2d2" type="state_publisher" />
+</launch>
+

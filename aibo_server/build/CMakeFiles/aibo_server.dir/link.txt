@@ -1,0 +1,1 @@
+/usr/bin/c++   -O2 -g     -pthread CMakeFiles/aibo_server.dir/src/AiboNode.o CMakeFiles/aibo_server.dir/src/AiboServer.o  -o ../bin/aibo_server -rdynamic -L/opt/ros/fuerte/lib -lroscpp -lrostime -lrosconsole -lroscpp_serialization -lxmlrpcpp -lurbi -Wl,-rpath,/opt/ros/fuerte/lib 

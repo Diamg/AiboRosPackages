@@ -1,0 +1,380 @@
+<?xml version="1.0"?>
+
+<robot name="Aibo" >
+  <origin pose="0.0 0.120 0.146 0 0 0"/>
+
+    <link name="body" gravity="1" self_collide="1">
+      <origin pose="0.0 0 0 0 1.5707 1.5707"/>
+   
+     
+      <collision name="geom">
+        <geometry>
+         <mesh filename="Aibo/body-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  />
+        </geometry>
+      </collision>
+    
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/body-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  />
+        </geometry>
+        <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+    
+<!------------------------------------------------------------------->
+<!--Potes, part superior-->
+    <link name="RF_up_leg" gravity="1" self_collide="1">
+      <origin pose="0.055 0.065 -0.025 0 0 0"/>
+  
+      
+  
+      <collision name="geom">
+        <geometry>
+          <mesh filename="Aibo/RF-up-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  />
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/RF-up-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.075"/>
+        </geometry>
+        <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+
+    <link name="LFup_leg" gravity="1" self_collide="1">
+      <origin pose="-0.055 0.065 -0.025 0 0 0"/>
+  
+      
+  
+      <collision name="geom">
+        <geometry>
+          <mesh filename="Aibo/LF-up-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.075"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/LF-up-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.075"/>
+        </geometry>
+        <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+
+    <link name="RB_up_leg" gravity="1" self_collide="1">
+      <origin pose="0.055 -0.065 -0.025 0 0 0"/>
+  
+      <collision name="geom">
+        <geometry>
+          <mesh filename="Aibo/RB-up-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.075"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/RB-up-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.075"/>
+        </geometry>
+        <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+
+    <link name="LB_up_leg" gravity="1" self_collide="1">
+      <origin pose="-0.055 -0.065 -0.025 0 0 0"/>
+  
+      
+  
+      <collision name="geom">
+        <geometry>
+          <mesh filename="Aibo/LB-up-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.075"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/LB-up-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.075"/>
+        </geometry>
+        <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+
+<!------------------------------------------------------------------->
+<!--Potes, part inferior-->
+    <link name="RF_down_leg" gravity="1" self_collide="1">
+      <origin pose="0.055 0.085135 -0.09286 0.38025 0 0"/>
+  
+     
+  
+      <collision name="geom">
+        <geometry>
+          <mesh filename="Aibo/RF-down-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/RF-down-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.080"/>
+        </geometry>
+        <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+
+    <link name="LF_down_leg" gravity="1" self_collide="1">
+      <origin pose="-0.055 0.085135 -0.09286 0.38025 0 0"/>
+  
+     
+      <collision name="geom">
+        <geometry>
+          <mesh filename="Aibo/LF-down-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/LF-down-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.080"/>
+        </geometry>
+       <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+
+    <link name="RB_down_leg" gravity="1" self_collide="1">
+      <origin pose="0.055 -0.085135 -0.09286 -0.38025 0 0"/>
+  
+     
+  
+      <collision name="geom">
+        <geometry>
+          <mesh filename="Aibo/RB-down-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/RB-down-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.080"/>
+        </geometry>
+        <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+
+    <link name="L_down_leg" gravity="1" self_collide="1">
+      <origin pose="-0.055 -0.085135 -0.09286 -0.38025 0 0"/>
+  
+      
+  
+      <collision name="geom">
+        <geometry>
+          <mesh filename="Aibo/LB-down-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.080"/>
+        </geometry>
+      </collision>
+   
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/LB-down-leg-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><cylinder radius="0.020" length="0.080"/>
+        </geometry>
+        <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+
+<!------------------------------------------------------------------->
+<!--Peus-->    
+    <link name="RF_paw" gravity="1" self_collide="1">
+      <origin pose="0.055 0.099985 -0.130 0 0 0"/>
+  
+     
+  
+      <collision name="geom">
+        <geometry>
+          <mesh filename="Aibo/RF-paw-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><sphere radius="0.015"/>
+        </geometry>
+	<surface>
+	  <friction>
+            <ode mu='1.000000' mu2='1.000000'/>
+          </friction>
+	</surface>
+      </collision>
+    
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/RF-paw-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><sphere radius="0.015"/>
+        </geometry>
+        <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+
+    <link name="LF_paw" gravity="1" self_collide="1">
+      <origin pose="-0.055 0.099985 -0.130 0 0 0"/>
+  
+     
+  
+      <collision name="geom">
+        <geometry>
+          <mesh filename="Aibo/LF-paw-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><sphere radius="0.015"/>
+        </geometry>
+	<surface>
+	  <friction>
+            <ode mu='1.000000' mu2='1.000000'/>
+          </friction>
+	</surface>
+      </collision>
+    
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/LF-paw-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><sphere radius="0.015"/>
+        </geometry>
+        <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+
+    <link name="RB_paw" gravity="1" self_collide="1">
+      <origin pose="0.055 -0.099985 -0.130 0 0 0"/>
+  
+     
+  
+      <collision name="geom">
+        <geometry>
+          <mesh filename="Aibo/RB-paw-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><sphere radius="0.015"/>
+        </geometry>
+	<surface>
+	  <friction>
+            <ode mu='1.000000' mu2='1.000000'/>
+          </friction>
+	</surface>
+      </collision>
+    
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/RB-paw-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><sphere radius="0.015"/>
+        </geometry>
+       <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+
+    <link name="Lpaw" gravity="1" self_collide="1">
+      <origin pose="-0.055 -0.099985 -0.130 0 0 0"/>
+  
+     
+  
+      <collision name="geom">
+        <geometry>
+          <mesh filename="Aibo/LB-paw-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><sphere radius="0.015"/>
+        </geometry>
+	<surface>
+	  <friction>
+            <ode mu='1.000000' mu2='1.000000'/>
+          </friction>
+	</surface>
+      </collision>
+    
+      <visual name="visual">
+        <geometry>
+          <mesh filename="Aibo/LB-paw-aibo-ers7.dae" scale="0.0254 0.0254 0.0254"  /><sphere radius="0.015"/>
+        </geometry>
+       <color rgba="1 1 1 1"/>
+      </visual>
+    </link>
+
+
+    </link>
+
+
+<!------------------------------------------------------------------->
+<!--Joints-->
+    <joint type="revolute" name="RF_up_leg_joint">
+      <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+      <origin pose="0 0.065 0 0 0 0"/>
+      <child link="RF_up_leg"/>
+      <parent link="body"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint type="revolute" name="LF_up_leg_joint">
+      <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+      <origin pose="0 0.065 0 0 0 0"/>
+      <child link="LF_up_leg"/>
+      <parent link="body"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint type="revolute" name="RB_up_leg_joint">
+      <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+      <origin pose="0 -0.065 0 0 0 0"/>
+      <child link="RB_up_leg"/>
+      <parent link="body"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint type="revolute" name="LB_up_leg_joint">
+      <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+      <origin pose="0 -0.065 0 0 0 0"/>
+      <child link="LB_up_leg"/>
+      <parent link="body"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+  
+
+
+    <joint type="revolute" name="RF_down_leg_joint">
+      <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+      <origin pose="0 0.074 -0.065 0 0 0"/>
+      <child link="RF_down_leg"/>
+      <parent link="RF_up_leg"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint type="revolute" name="LF_down_leg_joint">
+      <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+      <origin pose="0 0.074 -0.065 0 0 0"/>
+      <child link="LF_down_leg"/>
+      <parent link="LF_up_leg"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint type="revolute" name="RB_down_leg_joint">
+      <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+      <origin pose="0 -0.074 -0.065 0 0 0"/>
+      <child link="RB_down_leg"/>
+      <parent link="RB_up_leg"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint type="revolute" name="LB_down_leg_joint">
+      <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+      <origin pose="0 -0.074 -0.065 0 0 0"/>
+      <child link="LB_down_leg"/>
+      <parent link="LB_up_leg"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+
+    <joint type="revolute" name="RF_paw_joint">
+      <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+      <origin pose="0 0.099985 -0.130 0 0 0"/>
+      <child link="RF_paw"/>
+      <parent link="RF_down_leg"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint type="revolute" name="LF_paw_joint">
+      <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+      <origin pose="0 0.099985 -0.130 0 0 0"/>
+      <child link="LF_paw"/>
+      <parent link="LF_down_leg"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+    <joint type="revolute" name="RB_paw_joint">
+      <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+      <origin pose="0 -0.099985 -0.130 0 0 0"/>
+      <child link="RB_paw"/>
+      <parent link="RB_down_leg"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+      <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+    <joint type="revolute" name="LB_paw_joint">
+      <origin pose="0 -0.099985 -0.130 0 0 0"/>
+      <child link="LB_paw"/>
+      <parent link="LB_down_leg"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+</robot>
+

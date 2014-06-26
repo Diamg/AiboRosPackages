@@ -1,0 +1,23 @@
+/*
+*  AiboNode.cpp
+*  Copyright (c) 2013 Ricardo Tellez
+*  Created on: 17-November-2013
+*  Author: Ricardo Tellez
+*  email: r_tellez@ouroboros.org
+*
+*/
+
+
+#include "AiboServer.h"
+#include <ros/ros.h>
+
+int main(int argc, char** argv)
+{
+
+  ros::init(argc, argv, "aibo_server");
+  AiboServer aibo ("192.168.10.100");
+
+  ros::spin();
+
+  return(0);
+}

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<robot name="Aibo">
+
+<link name="body" self_collide="1">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0.0 0.146" rpy="0 1.5707 1.5707" />
+    <geometry>
+       <cylinder radius="0.060" length=".260" />
+    </geometry>
+    <material name="gray">
+      <color rgba=".2 .2 .2 1" />
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0.0 0.146" rpy="0 1.5707 1.5707" />
+    <geometry>
+       <cylinder radius="0.060" length=".260" />
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+
+<link name="legRFup" self_collide="1">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius="0.020" length="0.075"/>
+    </geometry>
+    <material name="white">
+      <color rgba=".2 .2 .2 1"/>
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.020" length="0.075"/>
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+<joint name="legRF1" type="revolute">
+  <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+  <origin xyz="0.055 0.065 0.121" pry="0 0 1.5707" />
+  <parent link="body"/>
+  <child link="legRFup"/>
+  <axis xyz="1 0 0"/>
+</joint>
+<link name="legLFup" self_collide="1">
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+    <origin/>
+  </inertial>
+
+  <visual>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius="0.020" length="0.075"/>
+    </geometry>
+    <material name="white">
+      <color rgba=".2 .2 .2 1"/>
+    </material>
+  </visual>
+
+  <collision>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.020" length="0.075"/>
+    </geometry>
+    <contact_coefficients mu="0" kp="1000.0" kd="1.0"/>
+  </collision>
+</link>
+<joint name="legLF1" type="revolute">
+  <limit effort="1000.0" lower="1.222" upper="1.222" velocity="0.5"/>
+  <origin xyz="-0.055 0.065 0.121" pry="0 0 1.5707" />
+  <parent link="body"/>
+  <child link="legLFup"/>
+  <axis xyz="1 0 0"/>
+</joint>
+

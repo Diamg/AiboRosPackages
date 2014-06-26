@@ -1,0 +1,80 @@
+#include <string>
+#include <ros/ros.h>
+#include <sensor_msgs/JointState.h>
+#include <tf/transform_broadcaster.h>
+#include <aibo_server/Joints.h>
+
+const double degree = M_PI/180;
+double legRF1=0, legLF1=0;
+
+void callback(const aibo_server::Joints::ConstPtr& msg) {
+legRF1=(msg->jointRF1)*degree;
+std::cout << msg->jointRF1<<std::flush;
+}
+
+int main(int argc, char** argv) {
+    ros::init(argc, argv, "state_publisher");
+    ros::NodeHandle n;
+    ros::Subscriber joint_sub = n.subscribe<aibo_server::Joints>("/aibo_server/aibo/joints", 1, callback);
+    ros::Publisher joint_pub = n.advertise<sensor_msgs::JointState>("joint_states", 1);
+    tf::TransformBroadcaster broadcaster;
+    ros::Rate loop_rate(30);
+
+    
+
+    // robot state
+    // double tilt = 0, tinc = degree, swivel=0, angle=0, height=0, hinc=0.005;
+    
+    // message declarations
+    geometry_msgs::TransformStamped odom_trans;
+    sensor_msgs::JointState joint_state;
+    odom_trans.header.frame_id = "odom";
+    odom_trans.child_frame_id = "body";
+
+    while (ros::ok()) {
+        //update joint_state
+        joint_state.header.stamp = ros::Time::now();
+        joint_state.name.resize(2);
+        joint_state.position.resize(2);
+	joint_state.name[0] ="legRF1";
+	joint_state.position[0] = legRF1;
+	joint_state.name[1] ="legLF1";
+	joint_state.position[1] = legLF1;
+        //joint_state.name[0] ="swivel";
+        //joint_state.position[0] = swivel;
+        //joint_state.name[1] ="tilt";
+        //joint_state.position[1] = tilt;
+        //joint_state.name[2] ="periscope";
+        //joint_state.position[2] = height;
+
+
+        // update transform
+        // (moving in a circle with radius=2)
+        odom_trans.header.stamp = ros::Time::now();
+        //odom_trans.transform.translation.x = cos(angle)*2;
+        //odom_trans.transform.translation.y = sin(angle)*2;
+        //odom_trans.transform.translation.z = .7;
+        odom_trans.transform.rotation = tf::createQuaternionMsgFromYaw(0.0);
+
+        //send the joint state and transform
+        joint_pub.publish(joint_state);
+        broadcaster.sendTransform(odom_trans);
+
+        // Create new robot state
+	legRF1+=degree*3;
+	legLF1+=degree*3;
+        //tilt += tinc;
+        //if (tilt<-.5 || tilt>0) tinc *= -1;
+        //height += hinc;
+        //if (height>.2 || height<0) hinc *= -1;
+        //swivel += degree;
+        //angle += degree/4;
+
+        // This will adjust as needed per iteration
+	ros::spinOnce();
+        loop_rate.sleep();
+    }
+
+
+    return 0;
+}
