@@ -7,12 +7,7 @@
 ;//! \htmlinclude Accel.msg.html
 
 (cl:defclass <Accel> (roslisp-msg-protocol:ros-message)
-  ((header
-    :reader header
-    :initarg :header
-    :type std_msgs-msg:Header
-    :initform (cl:make-instance 'std_msgs-msg:Header))
-   (x
+  ((x
     :reader x
     :initarg :x
     :type cl:float
@@ -37,11 +32,6 @@
   (cl:unless (cl:typep m 'Accel)
     (roslisp-msg-protocol:msg-deprecation-warning "using old message class name aibo_server-msg:<Accel> is deprecated: use aibo_server-msg:Accel instead.")))
 
-(cl:ensure-generic-function 'header-val :lambda-list '(m))
-(cl:defmethod header-val ((m <Accel>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader aibo_server-msg:header-val is deprecated.  Use aibo_server-msg:header instead.")
-  (header m))
-
 (cl:ensure-generic-function 'x-val :lambda-list '(m))
 (cl:defmethod x-val ((m <Accel>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader aibo_server-msg:x-val is deprecated.  Use aibo_server-msg:x instead.")
@@ -58,7 +48,6 @@
   (z m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <Accel>) ostream)
   "Serializes a message object of type '<Accel>"
-  (roslisp-msg-protocol:serialize (cl:slot-value msg 'header) ostream)
   (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'x))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
@@ -89,7 +78,6 @@
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <Accel>) istream)
   "Deserializes a message object of type '<Accel>"
-  (roslisp-msg-protocol:deserialize (cl:slot-value msg 'header) istream)
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -130,19 +118,18 @@
   "aibo_server/Accel")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<Accel>)))
   "Returns md5sum for a message object of type '<Accel>"
-  "5defbd163657b4f6f639ba6d5676cc01")
+  "4a842b65f413084dc2b10fb484ea7f17")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'Accel)))
   "Returns md5sum for a message object of type 'Accel"
-  "5defbd163657b4f6f639ba6d5676cc01")
+  "4a842b65f413084dc2b10fb484ea7f17")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<Accel>)))
   "Returns full string definition for message of type '<Accel>"
-  (cl:format cl:nil "#ROS header~%Header header~%~%#Whether the bumper is being pressed~%float64 x~%float64 y~%float64 z~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.secs: seconds (stamp_secs) since epoch~%# * stamp.nsecs: nanoseconds since stamp_secs~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "#ROS header~%#Header header~%~%#Whether the bumper is being pressed~%float64 x~%float64 y~%float64 z~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'Accel)))
   "Returns full string definition for message of type 'Accel"
-  (cl:format cl:nil "#ROS header~%Header header~%~%#Whether the bumper is being pressed~%float64 x~%float64 y~%float64 z~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.secs: seconds (stamp_secs) since epoch~%# * stamp.nsecs: nanoseconds since stamp_secs~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "#ROS header~%#Header header~%~%#Whether the bumper is being pressed~%float64 x~%float64 y~%float64 z~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <Accel>))
   (cl:+ 0
-     (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))
      8
      8
      8
@@ -150,7 +137,6 @@
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <Accel>))
   "Converts a ROS message object to a list"
   (cl:list 'Accel
-    (cl:cons ':header (header msg))
     (cl:cons ':x (x msg))
     (cl:cons ':y (y msg))
     (cl:cons ':z (z msg))

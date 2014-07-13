@@ -14,7 +14,6 @@
 
 #include "ros/assert.h"
 
-#include "std_msgs/Header.h"
 
 namespace aibo_server
 {
@@ -23,23 +22,18 @@ struct Accel_ {
   typedef Accel_<ContainerAllocator> Type;
 
   Accel_()
-  : header()
-  , x(0.0)
+  : x(0.0)
   , y(0.0)
   , z(0.0)
   {
   }
 
   Accel_(const ContainerAllocator& _alloc)
-  : header(_alloc)
-  , x(0.0)
+  : x(0.0)
   , y(0.0)
   , z(0.0)
   {
   }
-
-  typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
-   ::std_msgs::Header_<ContainerAllocator>  header;
 
   typedef double _x_type;
   double x;
@@ -79,12 +73,12 @@ template<class ContainerAllocator>
 struct MD5Sum< ::aibo_server::Accel_<ContainerAllocator> > {
   static const char* value() 
   {
-    return "5defbd163657b4f6f639ba6d5676cc01";
+    return "4a842b65f413084dc2b10fb484ea7f17";
   }
 
   static const char* value(const  ::aibo_server::Accel_<ContainerAllocator> &) { return value(); } 
-  static const uint64_t static_value1 = 0x5defbd163657b4f6ULL;
-  static const uint64_t static_value2 = 0xf639ba6d5676cc01ULL;
+  static const uint64_t static_value1 = 0x4a842b65f413084dULL;
+  static const uint64_t static_value2 = 0xc2b10fb484ea7f17ULL;
 };
 
 template<class ContainerAllocator>
@@ -102,30 +96,12 @@ struct Definition< ::aibo_server::Accel_<ContainerAllocator> > {
   static const char* value() 
   {
     return "#ROS header\n\
-Header header\n\
+#Header header\n\
 \n\
 #Whether the bumper is being pressed\n\
 float64 x\n\
 float64 y\n\
 float64 z\n\
-\n\
-================================================================================\n\
-MSG: std_msgs/Header\n\
-# Standard metadata for higher-level stamped data types.\n\
-# This is generally used to communicate timestamped data \n\
-# in a particular coordinate frame.\n\
-# \n\
-# sequence ID: consecutively increasing ID \n\
-uint32 seq\n\
-#Two-integer timestamp that is expressed as:\n\
-# * stamp.secs: seconds (stamp_secs) since epoch\n\
-# * stamp.nsecs: nanoseconds since stamp_secs\n\
-# time-handling sugar is provided by the client library\n\
-time stamp\n\
-#Frame this data is associated with\n\
-# 0: no frame\n\
-# 1: global frame\n\
-string frame_id\n\
 \n\
 ";
   }
@@ -133,8 +109,7 @@ string frame_id\n\
   static const char* value(const  ::aibo_server::Accel_<ContainerAllocator> &) { return value(); } 
 };
 
-template<class ContainerAllocator> struct HasHeader< ::aibo_server::Accel_<ContainerAllocator> > : public TrueType {};
-template<class ContainerAllocator> struct HasHeader< const ::aibo_server::Accel_<ContainerAllocator> > : public TrueType {};
+template<class ContainerAllocator> struct IsFixedSize< ::aibo_server::Accel_<ContainerAllocator> > : public TrueType {};
 } // namespace message_traits
 } // namespace ros
 
@@ -147,7 +122,6 @@ template<class ContainerAllocator> struct Serializer< ::aibo_server::Accel_<Cont
 {
   template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
   {
-    stream.next(m.header);
     stream.next(m.x);
     stream.next(m.y);
     stream.next(m.z);
@@ -168,9 +142,6 @@ struct Printer< ::aibo_server::Accel_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const  ::aibo_server::Accel_<ContainerAllocator> & v) 
   {
-    s << indent << "header: ";
-s << std::endl;
-    Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
     s << indent << "x: ";
     Printer<double>::stream(s, indent + "  ", v.x);
     s << indent << "y: ";

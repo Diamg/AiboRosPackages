@@ -118,7 +118,6 @@ CMakeFiles/ROSBUILD_genmsg_py: ../src/aibo_server/msg/__init__.py
 ../src/aibo_server/msg/_Accel.py: ../msg/Accel.msg
 ../src/aibo_server/msg/_Accel.py: /opt/ros/fuerte/share/rospy/rosbuild/scripts/genmsg_py.py
 ../src/aibo_server/msg/_Accel.py: /opt/ros/fuerte/share/roslib/bin/gendeps
-../src/aibo_server/msg/_Accel.py: /opt/ros/fuerte/share/std_msgs/msg/Header.msg
 ../src/aibo_server/msg/_Accel.py: ../manifest.xml
 ../src/aibo_server/msg/_Accel.py: /opt/ros/fuerte/share/roslang/manifest.xml
 ../src/aibo_server/msg/_Accel.py: /opt/ros/fuerte/share/rospy/manifest.xml

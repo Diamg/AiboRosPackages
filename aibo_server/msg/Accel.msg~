@@ -1,5 +1,5 @@
 #ROS header
-#Header header
+Header header
 
 #Whether the bumper is being pressed
 float64 x
