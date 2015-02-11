@@ -1,0 +1,44 @@
+LICENSE
+-------
+
+Copyright (C) 2007 Gostai
+ 
+See the separated LICENCE file.
+
+
+WHAT CAN YOU DO WITH THIS PACKAGE
+---------------------------------
+
+This package contains an Urbi-sdk allowing you to create remote UObjects for any robot.
+
+URBI is an object oriented language, based on a prototype approach. You can define objects in pure URBI, or plug C++ classes called "UObjects" directly in the kernel to add these classes to the language, like a native URBI class. You can even unplug the UObject from the kernel and run it as a remote autonomous application, taking the IP address of the URBI Engine as a parameter. You get a remote object, and it's completely transparent.
+
+If you want to plug UObjects directly in the kernel you have to get an Urbi-engine sdk for your specific robot.
+
+This package countains also the liburbi c++ version.
+
+Liburbi-c++ is a library designed to encapsulate an URBI connection. It handles the TCP connection with the URBI server, and the dispatching of messages it sends. The library is thread-safe and reentrant.
+
+
+QUICK START
+-----------
+
+cp the content of this archive to /
+
+To build remote componants, use umake.
+Read http://www.gostai.com/doc/en/umake/
+
+For more information on urbi, you can read the uobject documentation
+and the urbi tutorial at http://www.gostai.com/doc.php.
+
+Urbi tutorial
+http://www.gostai.com/doc/en/urbi-tutorial-1.0
+
+Uobject overview
+http://www.gostai.com/uobject.html
+
+Uobject documentation
+http://www.gostai.com/doc/en/uobject
+
+liburbi c++ documentation
+http://www.gostai.com/doc/en/liburbi-1.0/

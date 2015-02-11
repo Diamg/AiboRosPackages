@@ -1,0 +1,5 @@
+liburbi just works on Ubuntu 32 bits (just tested on 12.x)
+
+The folders on /liburbi should be included on the /usr/local directory
+
+
